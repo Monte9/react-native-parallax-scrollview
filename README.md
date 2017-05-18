@@ -50,15 +50,16 @@ Look at the [`example`](https://github.com/Monte9/react-native-scroll-view/tree/
 There are a couple packages that provide a similar parallax scroll view component ([here](https://github.com/jaysoo/react-native-parallax-scroll-view) and [here](https://github.com/lelandrichardson/react-native-parallax-view)) although both of them are not maintained.
 
 I really liked [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view) but here are a couple reasons I didn't use it in my app:
-1. It was not maintained hence I knew submitting issues on it would go nowhere
+1. It was not maintained hence I knew submitting an issue on it would go nowhere
 2. It didn't have a Sticky NavBar when scrolling (similar to Spotify/ ReactConf'17 app)
 
-So I set out to create a Parallax ScrollView (using [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view) as a base) with
+
+So I set out to create a Parallax ScrollView component (using [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view) as a base) with
 1. Sticky NavBar Header :tada:
 2. An awesome default component that just works out of the box (```<ParallaxScrollView />```)
-3. Flexible and comprehensive API to build your custom use case on.
+3. Flexible and comprehensive API to build your own custom use case on it
 
-aka it's a **(Parallax) ScrollView component** for React Native that we *truly deserve* with. :rocket:
+aka it's a **(Parallax) ScrollView component** for React Native that we *truly deserve* :rocket:
 
 ## Feedback
 
