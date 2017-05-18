@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
+  Image,
   Animated,
   ScrollView,
   Dimensions,
@@ -10,7 +11,7 @@ import {
 
 import { Icon, List, ListItem } from 'react-native-elements';
 
-import { COLORS, LIST, SCREEN_WIDTH, SCREEN_HEIGHT } from './constants'
+import { COLORS, FACEBOOK_LIST, SLACK_LIST, GENERIC_LIST, SCREEN_WIDTH, SCREEN_HEIGHT } from './constants'
 
 const SCREEN = Dimensions.get('window');
 const ScrollViewPropTypes = ScrollView.propTypes;
@@ -100,7 +101,7 @@ export default class ParallaxScrollView extends Component {
           position: 'relative',
           height: newWindowHeight,
           opacity: scrollY.interpolate({
-            inputRange: [-windowHeight, 0, windowHeight / 2],
+            inputRange: [-windowHeight, 0, windowHeight / 0.5],
             outputRange: [1, 1, 0]
           })
         }}
@@ -109,10 +110,22 @@ export default class ParallaxScrollView extends Component {
           this.props.header :
           <View style={styles.headerView}>
             <View style={styles.headerTextView}>
-              <Text style={styles.headerTextViewTitle}>My Day</Text>
-              <Text style={styles.headerTextViewSubtitle}>
-                Wednesday, May 17
-              </Text>
+              <Animated.View
+                style={[styles.avatarView,
+                  {
+                    opacity: scrollY.interpolate({
+                      inputRange: [-windowHeight, 0, windowHeight * 0.42],
+                      outputRange: [1, 1, 0]
+                    })
+                  }
+                ]}
+              >
+                <Image source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg'}} style={{height: 120, width: 120, borderRadius: 60}} />
+              </Animated.View>
+              <View style={{paddingBottom: 20}}>
+                <Text style={{textAlign: 'center', fontSize: 22, color: 'white', paddingBottom: 5}}>Katy Friedson</Text>
+                <Text style={{textAlign: 'center', fontSize: 17, color: 'rgba(247,247, 250, 1)', paddingBottom: 5}}>Engineering Manager</Text>
+              </View>
             </View>
           </View>
         }
@@ -133,13 +146,13 @@ export default class ParallaxScrollView extends Component {
       <Animated.View
         style={{
           opacity: scrollY.interpolate({
-            inputRange: [-windowHeight, 0, windowHeight / 1.3],
+            inputRange: [-windowHeight, windowHeight * 0.42, windowHeight * 0.8],
             outputRange: [0, 0, 1]
           })
         }}
       >
         <Text style={{ fontSize: 22, fontWeight: '600', color: 'white' }}>
-          My Day
+          Katy Friedson
         </Text>
       </Animated.View>
     );
@@ -153,7 +166,7 @@ export default class ParallaxScrollView extends Component {
     }
 
     var backgroundColor = scrollY.interpolate({
-      inputRange: [-windowHeight, 0, windowHeight / 1.3],
+      inputRange: [-windowHeight, windowHeight * 0.42, windowHeight * 0.8],
       outputRange: ['transparent', 'transparent', 'rgba(0, 0, 0, 1.0)']
     });
 
@@ -207,33 +220,50 @@ export default class ParallaxScrollView extends Component {
 
   renderTodoListContent() {
     return (
-      <List containerStyle={styles.listContainerView}>
-        {LIST.map((item, index) => (
+      <View>
+        <List>
+        {
+          FACEBOOK_LIST.map((item, index) => (
+            <ListItem
+              key={index}
+              onPress={() => console.log("List item pressed")}
+              title={item.title}
+              leftIcon={{name: item.icon}} />
+          ))
+        }
+        </List>
+        <List>
+        {
+          SLACK_LIST.map((item, index) => (
+            <ListItem
+              key={index}
+              onPress={() => console.log("List item pressed")}
+              title={item.title}
+              leftIcon={{name: item.icon}} />
+          ))
+        }
+        </List>
+        <List>
+        {
+          GENERIC_LIST.map((item, index) => (
+            <ListItem
+              key={index}
+              onPress={() => console.log("List item pressed")}
+              title={item.title}
+              leftIcon={{name: item.icon}} />
+          ))
+        }
+        </List>
+        <List containerStyle={{marginBottom: 15}}>
           <ListItem
-            key={index}
-            hideChevron
-            title={item.description}
-            titleStyle={
-              item.checked
-                ? styles.itemCompleteTitle
-                : styles.itemInCompleteTitle
-            }
-            subtitle={item.category}
-            subtitleStyle={
-              item.checked
-                ? styles.itemCompleteSubtitle
-                : styles.itemInCompleteSubtitle
-            }
-            leftIcon={
-              item.checked
-                ? this.itemCompleteIconStyle()
-                : this.itemInCompleteIconStyle()
-            }
-            leftIconOnPress={() => console.log("Icon pressed")}
-            onPress={() => console.log("List Item pressed")}
-          />
-        ))}
-      </List>
+            key={1}
+            hideChevron={true}
+            onPress={() => console.log('Logout Pressed')}
+            title='LOGOUT'
+            titleStyle={styles.logoutText}
+            icon={{name: ''}} />
+        </List>
+      </View>
     );
   }
 
@@ -300,19 +330,20 @@ var styles = StyleSheet.create({
     flexDirection: 'column'
   },
   headerView: {
-    flex: 5
+    flex: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  headerTextView: {
-    position: 'absolute',
-    left: 25,
-    bottom: 25,
-    backgroundColor: 'transparent'
+  avatarView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    paddingBottom: 10,
   },
   headerTextViewTitle: {
     fontSize: 35,
     color: 'white',
     fontWeight: '300',
-    paddingBottom: 10
   },
   headerTextViewSubtitle: {
     fontSize: 20,
@@ -375,12 +406,17 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingRight: 15
+  },
+  logoutText: {
+    color: 'red',
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 });
 
 ParallaxScrollView.defaultProps = {
-  backgroundSource: {uri: 'http://i.imgur.com/ytzr6ff.png'},
-  windowHeight: SCREEN.height * 0.38,
+  backgroundSource: {uri: 'http://i.imgur.com/6Iej2c3.png'},
+  windowHeight: SCREEN.height * 0.42,
   contentInset: {
     top: SCREEN.scale
   },

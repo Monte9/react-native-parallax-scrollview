@@ -4,10 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import ParallaxScrollView from './beta-src/ParallaxScrollView'
 
-// <View style={styles.container}>
-//   <Text>hello</Text>
-// </View>
-
 class App extends React.Component {
   render() {
     return (

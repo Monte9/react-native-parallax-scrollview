@@ -14,101 +14,67 @@ export const COLORS = {
   addItemIconNoValue: 'rgba(79, 94, 248, 1)'
 };
 
-export const LIST = [
+export const FACEBOOK_LIST = [
   {
-    description: 'Buy groceries on my way home',
-    category: 'To-Do',
-    notes: 'Don\'t forget or wifey won\'t make you any dinner',
-    checked: true
+    title: 'Friends',
+    icon: 'people'
   },
   {
-    description: 'Release v3.1',
-    category: 'Work',
-    notes: 'Need to codepush it. QA it before release',
-    checked: true
+    title: 'Pictures',
+    icon: 'wallpaper'
   },
   {
-    description: 'Finish React Native GraphQL Todo List App',
-    category: 'Projects',
-    notes: 'GraphQL is :fire:',
-    checked: false
+    title: 'Payment',
+    icon: 'credit-card'
   },
   {
-    description: 'Finish college & graduate',
-    category: 'Life',
-    notes: "Life don't wait for nobody",
-    checked: true
+    title: 'Nearby',
+    icon: 'location-city'
   },
   {
-    description: 'Drink water',
-    category: 'Life',
-    notes: 'Gotta stay hydrated, else you will dehydrate',
-    checked: false
+    title: 'Games',
+    icon: 'videogame-asset'
+  },
+];
+
+export const SLACK_LIST = [
+  {
+    title: 'Activity',
+    icon: 'bookmark-border'
   },
   {
-    description: 'Go to the Warriors game',
-    category: 'Fun',
-    notes: 'Splash Brothers',
-    checked: false
+    title: 'Notifications',
+    icon: 'notifications-none'
   },
   {
-    description: 'Call Obama',
-    category: 'Fun',
-    notes: 'Catch with with my bud, Barack',
-    checked: true
+    title: 'Starred Items',
+    icon: 'star-border'
   },
   {
-    description: 'Remove trash',
-    category: 'Home',
-    notes: 'Gotta do it',
-    checked: true
+    title: 'Your Files',
+    icon: 'cloud-queue'
+  },
+];
+
+export const GENERIC_LIST = [
+  {
+    title: 'Edit Profile',
+    icon: 'person'
   },
   {
-    description: 'Buy groceries on my way home',
-    category: 'To-Do',
-    notes: 'Don\'t forget or wifey won\'t make you any dinner',
-    checked: true
+    title: 'Change Password',
+    icon: 'fingerprint'
   },
   {
-    description: 'Release v3.1',
-    category: 'Work',
-    notes: 'Need to codepush it. QA it before release',
-    checked: true
+    title: 'Settings',
+    icon: 'settings'
   },
   {
-    description: 'Finish React Native GraphQL Todo List App',
-    category: 'Projects',
-    notes: 'GraphQL is :fire:',
-    checked: false
+    title: 'History',
+    icon: 'history'
   },
   {
-    description: 'Finish college & graduate',
-    category: 'Life',
-    notes: "Life don't wait for nobody",
-    checked: true
-  },
-  {
-    description: 'Drink water',
-    category: 'Life',
-    notes: 'Gotta stay hydrated, else you will dehydrate',
-    checked: false
-  },
-  {
-    description: 'Go to the Warriors game',
-    category: 'Fun',
-    notes: 'Splash Brothers',
-    checked: false
-  },
-  {
-    description: 'Call Obama',
-    category: 'Fun',
-    notes: 'Catch with with my bud, Barack',
-    checked: true
-  },
-  {
-    description: 'Remove trash',
-    category: 'Home',
-    notes: 'Gotta do it',
-    checked: true
+    title: 'Help',
+    icon: 'help'
   },
 ];
