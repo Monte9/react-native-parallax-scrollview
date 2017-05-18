@@ -1,11 +1,14 @@
+import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class ParallaxScrollView extends React.Component {
+import ParallaxScrollView from './beta/parallax_scroll_view';
+
+class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello 123123</Text>
+        <ParallaxScrollView />
       </View>
     );
   }
@@ -19,3 +22,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+Expo.registerRootComponent(App);
