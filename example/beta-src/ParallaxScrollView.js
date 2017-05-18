@@ -101,7 +101,7 @@ export default class ParallaxScrollView extends Component {
           position: 'relative',
           height: newWindowHeight,
           opacity: scrollY.interpolate({
-            inputRange: [-windowHeight, 0, windowHeight / 0.5],
+            inputRange: [-windowHeight, 0, windowHeight * 0.42 + 65],
             outputRange: [1, 1, 0]
           })
         }}
@@ -109,25 +109,16 @@ export default class ParallaxScrollView extends Component {
         {this.props.headerView ?
           this.props.header :
           <View style={styles.headerView}>
-            <View style={styles.headerTextView}>
-              <Animated.View
-                style={[styles.avatarView,
-                  {
-                    opacity: scrollY.interpolate({
-                      inputRange: [-windowHeight, 0, windowHeight * 0.42],
-                      outputRange: [1, 1, 0]
-                    })
-                  }
-                ]}
+              <View
+                style={styles.avatarView}
               >
                 <Image source={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg'}} style={{height: 120, width: 120, borderRadius: 60}} />
-              </Animated.View>
+              </View>
               <View style={{paddingBottom: 20}}>
                 <Text style={{textAlign: 'center', fontSize: 22, color: 'white', paddingBottom: 5}}>Katy Friedson</Text>
                 <Text style={{textAlign: 'center', fontSize: 17, color: 'rgba(247,247, 250, 1)', paddingBottom: 5}}>Engineering Manager</Text>
               </View>
             </View>
-          </View>
         }
       </Animated.View>
     );
@@ -338,7 +329,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    paddingBottom: 10,
+
   },
   headerTextViewTitle: {
     fontSize: 35,
