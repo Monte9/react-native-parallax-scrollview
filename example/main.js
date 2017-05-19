@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <ParallaxScrollView
         windowHeight={SCREEN_HEIGHT}
-        backgroundSource='http://i.imgur.com/sKR3Fkb.png'
+        backgroundSource='http://i.imgur.com/s4JEY9E.jpg'
         navBarTitle='Custom Title'
         navBarTitleColor='black'
         navBarColor='white'
@@ -33,9 +33,9 @@ class App extends React.Component {
             </View>
           </View>
         )}
-        leftIcon={{name: 'rocket', color: 'black', size: 30, type: 'font-awesome'}}
+        leftIcon={{name: 'rocket', color: 'rgba(228, 117, 125, 1)', size: 30, type: 'font-awesome'}}
         leftIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
-        rightIcon={{name: 'user', color: 'black', size: 30, type: 'font-awesome'}}
+        rightIcon={{name: 'user', color: 'rgba(228, 117, 125, 1)', size: 30, type: 'font-awesome'}}
         rightIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
       >
         <ScrollView style={{flex: 1, backgroundColor: 'rgba(228, 117, 125, 1)'}}>
@@ -72,12 +72,12 @@ class App extends React.Component {
     return (
       <ParallaxScrollView
         windowHeight={SCREEN_HEIGHT * 0.4}
-        backgroundSource='http://i.imgur.com/UyjQBkJ.png'
+        backgroundSource='http://i.imgur.com/ao1nxlD.png'
         navBarTitle='John Oliver'
         userName='John Oliver'
         userTitle='Comedian'
         userImage='http://i.imgur.com/RQ1iLOs.jpg'
-        leftIcon={{name: 'rocket', color: 'rgba(131, 175, 41, 1)', size: 30, type: 'font-awesome'}}
+        leftIcon={{name: 'rocket', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
         leftIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
         rightIcon={{name: 'user', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
         rightIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}

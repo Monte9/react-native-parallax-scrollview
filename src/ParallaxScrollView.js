@@ -113,7 +113,7 @@ export default class ParallaxScrollView extends Component {
           })
         }}
       >
-        <Text style={{ fontSize: 22, fontWeight: '600', color: navBarTitleColor || 'white' }}>
+        <Text style={{ fontSize: 18, fontWeight: '600', color: navBarTitleColor || 'white' }}>
           {this.props.navBarTitle || USER.name}
         </Text>
       </Animated.View>
