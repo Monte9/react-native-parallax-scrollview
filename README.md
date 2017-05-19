@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/Monte9/react-native-scroll-view">
-    <img alt="react-native-scroll-view" src="" width="450">
+    <img alt="react-native-scroll-view" src="http://i.imgur.com/j1ncYnT.jpg" width="450">
   </a>
 </p>
 
@@ -15,7 +15,7 @@
 
 ## Demo
 
-![Demo gif]()
+![Demo gif](http://i.imgur.com/th5pNlM.gifv)
 
 ## Installation
 
