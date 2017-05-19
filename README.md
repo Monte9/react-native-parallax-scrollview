@@ -29,13 +29,63 @@ Install the package using yarn or npm:
 import ParallaxScrollView from 'react-native-scroll-view';
 
 <ParallaxScrollView />
+
+<ParallaxScrollView
+  windowHeight={SCREEN_HEIGHT * 0.4}
+  backgroundSource='http://i.imgur.com/UyjQBkJ.png'
+  navBarTitle='John Oliver'
+  userName='John Oliver'
+  userTitle='Comedian'
+  userImage='http://i.imgur.com/RQ1iLOs.jpg'
+  leftIcon={{name: 'rocket', color: 'rgba(131, 175, 41, 1)', size: 30, type: 'font-awesome'}}
+  rightIcon={{name: 'user', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
+/>
+
+
+<ParallaxScrollView
+  windowHeight={SCREEN_HEIGHT * 0.4}
+  backgroundSource='http://i.imgur.com/UyjQBkJ.png'
+  navBarTitle='John Oliver'
+  userName='John Oliver'
+  userTitle='Comedian'
+  userImage='http://i.imgur.com/RQ1iLOs.jpg'
+  leftIcon={{name: 'rocket', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
+  rightIcon={{name: 'user', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
+>
+  <ScrollView style={{flex: 1, backgroundColor: 'rgba(228, 117, 125, 1)'}}>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>Custom view</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>keep going.</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>keep going..</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>keep going...</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>the end! :)</Text>
+    </View>
+  </ScrollView>
+</ParallaxScrollView>
 ```
 
 ## API
 
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| coming soon | none | function | coming soon |
+| backgroundSource | http://i.imgur.com/6Iej2c3.png | string | The background image for the header (url) |
+| windowHeight | SCREEN_HEIGHT * 0.5 | number | The height of the header window |
+| navBarTitle | Katy Friedson | string | The title to be display on the NavBar header |
+| userName | Katy Friedson | string | The user name displayed in the collapsable header view |
+| userImage | http://i.imgur.com/uma9OfG.jpg | string | The user image displayed in the collapsable header view |
+| userTitle | Engineering Manager | string | The user title displayed in the collapsable header view |
+| headerView | Profile View | custom object | Pass in a custom object to override the default header view |
+| leftIcon | menu | object | Pass in the left icon name and type as an object. ```leftIcon={{name: 'rocket', color: 'red', size: 30, type: 'font-awesome'}}```|
+| rightIcon | present | object | Pass in the right icon name and type etc as an object. ```rightIcon={{name: 'user', color: 'blue', size: 30, type: 'font-awesome'}}```|
+| *children* | List View | React Components | Render any react views/components as children and these will be rendered below the headerView |
 
 ## Try it out
 
