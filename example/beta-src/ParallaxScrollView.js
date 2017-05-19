@@ -98,7 +98,7 @@ export default class ParallaxScrollView extends Component {
   }
 
   renderNavBarTitle() {
-    var { windowHeight, backgroundSource } = this.props;
+    var { windowHeight, backgroundSource, navBarTitleColor } = this.props;
     var { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
@@ -113,7 +113,7 @@ export default class ParallaxScrollView extends Component {
           })
         }}
       >
-        <Text style={{ fontSize: 22, fontWeight: '600', color: 'white' }}>
+        <Text style={{ fontSize: 22, fontWeight: '600', color: navBarTitleColor || 'white' }}>
           {this.props.navBarTitle || USER.name}
         </Text>
       </Animated.View>
@@ -121,7 +121,10 @@ export default class ParallaxScrollView extends Component {
   }
 
   rendernavBar() {
-    var { windowHeight, backgroundSource, leftIcon, rightIcon} = this.props;
+    var {
+      windowHeight, backgroundSource, leftIcon,
+      rightIcon, leftIconOnPress, rightIconOnPress, navBarColor
+    } = this.props;
     var { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
@@ -135,7 +138,7 @@ export default class ParallaxScrollView extends Component {
           flexDirection: 'row',
           backgroundColor: scrollY.interpolate({
             inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
-            outputRange: ['transparent', 'transparent', 'rgba(0, 0, 0, 1.0)']
+            outputRange: ['transparent', 'transparent', navBarColor || 'rgba(0, 0, 0, 1.0)']
           })
         }}
       >
@@ -147,7 +150,14 @@ export default class ParallaxScrollView extends Component {
             alignItems: 'center'
           }}
         >
-          <Icon name={leftIcon && leftIcon.name || 'menu'} type={leftIcon && leftIcon.type || 'simple-line-icon'} color={leftIcon && leftIcon.color || 'white'} size={leftIcon && leftIcon.size || 23} />
+          <Icon
+            name={leftIcon && leftIcon.name || 'menu'}
+            type={leftIcon && leftIcon.type || 'simple-line-icon'}
+            color={leftIcon && leftIcon.color || 'white'}
+            size={leftIcon && leftIcon.size || 23}
+            onPress={leftIconOnPress}
+            underlayColor='transparent'
+          />
         </View>
         <View
           style={{
@@ -168,7 +178,14 @@ export default class ParallaxScrollView extends Component {
             alignItems: 'center'
           }}
         >
-          <Icon name={rightIcon && rightIcon.name || 'present'} type={rightIcon && rightIcon.type || 'simple-line-icon'} color={rightIcon && rightIcon.color || 'white'} size={rightIcon && rightIcon.size || 23} />
+          <Icon
+            name={rightIcon && rightIcon.name || 'present'}
+            type={rightIcon && rightIcon.type || 'simple-line-icon'}
+            color={rightIcon && rightIcon.color || 'white'}
+            size={rightIcon && rightIcon.size || 23}
+            onPress={rightIconOnPress}
+            underlayColor='transparent'
+          />
         </View>
       </Animated.View>
     );
@@ -254,6 +271,8 @@ export default class ParallaxScrollView extends Component {
 ParallaxScrollView.defaultProps = {
   backgroundSource: 'http://i.imgur.com/6Iej2c3.png',
   windowHeight: SCREEN_HEIGHT * DEFAULT_WINDOW_MULTIPLIER,
+  leftIconOnPress: () => console.log('Left icon pressed'),
+  rightIconOnPress: () => console.log('Right icon pressed')
 };
 
 ParallaxScrollView.propTypes = {
@@ -261,6 +280,8 @@ ParallaxScrollView.propTypes = {
   backgroundSource: React.PropTypes.string,
   windowHeight: React.PropTypes.number,
   navBarTitle: React.PropTypes.string,
+  navBarTitleColor: React.PropTypes.string,
+  navBarColor: React.PropTypes.string,
   userImage: React.PropTypes.string,
   userName: React.PropTypes.string,
   userTitle: React.PropTypes.string,

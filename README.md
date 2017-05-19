@@ -79,17 +79,21 @@ import ParallaxScrollView from 'react-native-scroll-view';
 | backgroundSource | http://i.imgur.com/6Iej2c3.png | string | The background image for the header (url) |
 | windowHeight | SCREEN_HEIGHT * 0.5 | number | The height of the header window |
 | navBarTitle | Katy Friedson | string | The title to be display on the NavBar header |
+| navBarTitleColor | 'white' | string | Color of the navBar title when displayed |
+| navBarColor | 'rgba(0, 0, 0, 1.0)' | string | Color of the navbar when shown |
 | userName | Katy Friedson | string | The user name displayed in the collapsable header view |
 | userImage | http://i.imgur.com/uma9OfG.jpg | string | The user image displayed in the collapsable header view |
 | userTitle | Engineering Manager | string | The user title displayed in the collapsable header view |
 | headerView | Profile View | custom object | Pass in a custom object to override the default header view |
 | leftIcon | menu | object | Pass in the left icon name and type as an object. ```leftIcon={{name: 'rocket', color: 'red', size: 30, type: 'font-awesome'}}```|
+| leftIconOnPress | none | callback | Callback function when the left icon is pressed |
 | rightIcon | present | object | Pass in the right icon name and type etc as an object. ```rightIcon={{name: 'user', color: 'blue', size: 30, type: 'font-awesome'}}```|
+| rightIconOnPress | none | callback | Callback function when the right icon is pressed |
 | *children* | List View | React Components | Render any react views/components as children and these will be rendered below the headerView |
 
 ## Try it out
 
-You can try it out with Exponent [here](https://exp.host/@monte9/react-native-graphql-todolist).
+You can try it out with Exponent [here](https://exp.host/@monte9/parallax-scrollview-example)
 
 ### Example
 
