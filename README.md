@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Monte9/react-native-scroll-view">
-    <img alt="react-native-scroll-view" src="http://i.imgur.com/j1ncYnT.jpg">
-  </a>
+  <img alt="react-native-scroll-view" src="http://i.imgur.com/j1ncYnT.jpg" width="700">
 </p>
 
 <br />
@@ -23,11 +21,17 @@ Install the package using yarn or npm:
 
 ## Usage
 
+### Default Profile Component
+
 ``` js
 import ParallaxScrollView from 'react-native-scroll-view';
 
 <ParallaxScrollView />
+```
 
+### Default header view with custom User
+
+```
 <ParallaxScrollView
   windowHeight={SCREEN_HEIGHT * 0.4}
   backgroundSource='http://i.imgur.com/UyjQBkJ.png'
@@ -38,8 +42,11 @@ import ParallaxScrollView from 'react-native-scroll-view';
   leftIcon={{name: 'rocket', color: 'rgba(131, 175, 41, 1)', size: 30, type: 'font-awesome'}}
   rightIcon={{name: 'user', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
 />
+```
 
+### Default Header view & Custom ScrollView content
 
+```
 <ParallaxScrollView
   windowHeight={SCREEN_HEIGHT * 0.4}
   backgroundSource='http://i.imgur.com/UyjQBkJ.png'
@@ -49,6 +56,50 @@ import ParallaxScrollView from 'react-native-scroll-view';
   userImage='http://i.imgur.com/RQ1iLOs.jpg'
   leftIcon={{name: 'rocket', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
   rightIcon={{name: 'user', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome'}}
+>
+  <ScrollView style={{flex: 1, backgroundColor: 'rgba(228, 117, 125, 1)'}}>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>Custom view</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>keep going.</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>keep going..</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>keep going...</Text>
+    </View>
+    <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 32, color: 'white'}}>the end! :)</Text>
+    </View>
+  </ScrollView>
+</ParallaxScrollView>
+```
+
+### Custom Header view & ScrollView content
+
+```
+<ParallaxScrollView
+  windowHeight={SCREEN_HEIGHT}
+  backgroundSource='http://i.imgur.com/s4JEY9E.jpg'
+  navBarTitle='Custom Title'
+  navBarTitleColor='black'
+  navBarColor='white'
+  headerView={(
+    <View style={styles.headerView}>
+      <View style={styles.headerTextView}>
+        <Text style={styles.headerTextViewTitle}>My App</Text>
+        <Text style={styles.headerTextViewSubtitle}>
+          Custom Header View
+        </Text>
+      </View>
+    </View>
+  )}
+  leftIcon={{name: 'rocket', color: 'rgba(228, 117, 125, 1)', size: 30, type: 'font-awesome'}}
+  leftIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
+  rightIcon={{name: 'user', color: 'rgba(228, 117, 125, 1)', size: 30, type: 'font-awesome'}}
+  rightIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
 >
   <ScrollView style={{flex: 1, backgroundColor: 'rgba(228, 117, 125, 1)'}}>
     <View style={{height: 300, justifyContent: 'center', alignItems: 'center'}}>
@@ -99,17 +150,12 @@ Look at the [`example`](https://github.com/Monte9/react-native-scroll-view/tree/
 
 ## Motivation
 
-There are a couple packages that provide a similar parallax scroll view component ([here](https://github.com/jaysoo/react-native-parallax-scroll-view) and [here](https://github.com/lelandrichardson/react-native-parallax-view)) although both of them are not maintained.
+Currently there are a couple packages that provide a similar parallax Scrollview component ([here](https://github.com/jaysoo/react-native-parallax-scroll-view) and [here](https://github.com/lelandrichardson/react-native-parallax-view)) although both of them are not maintained and wasn't exactly what I was looking for.
 
-I really liked [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view) but here are a couple reasons I didn't use it in my app:
-1. It was not maintained hence I knew submitting an issue on it would go nowhere
-2. It didn't have a Sticky NavBar when scrolling (similar to Spotify/ ReactConf'17 app)
-
-
-So I set out to create a Parallax ScrollView component (using [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view) as a base) with
+So I challenged myself to create a Parallax ScrollView component (using [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view) as a base) with
 1. Sticky NavBar Header :tada:
-2. An awesome default component that just works out of the box (```<ParallaxScrollView />```)
-3. Flexible and comprehensive API to build your own custom use case on it
+2. An awesome default profile component that just works out of the box (```<ParallaxScrollView />```)
+3. Flexible and comprehensive API to use the ScrollView component for any use case.
 
 aka it's a **(Parallax) ScrollView component** for React Native that we *truly deserve* :rocket:
 
