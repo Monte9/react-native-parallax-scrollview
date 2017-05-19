@@ -23,7 +23,7 @@ Install the package using yarn or npm:
 
 ### Default Profile Component
 
-``` js
+``` jsx
 import ParallaxScrollView from 'react-native-scroll-view';
 
 <ParallaxScrollView />
@@ -31,7 +31,7 @@ import ParallaxScrollView from 'react-native-scroll-view';
 
 ### Default header view with custom User
 
-```
+```jsx
 <ParallaxScrollView
   windowHeight={SCREEN_HEIGHT * 0.4}
   backgroundSource='http://i.imgur.com/UyjQBkJ.png'
@@ -46,7 +46,7 @@ import ParallaxScrollView from 'react-native-scroll-view';
 
 ### Default Header view & Custom ScrollView content
 
-```
+```jsx
 <ParallaxScrollView
   windowHeight={SCREEN_HEIGHT * 0.4}
   backgroundSource='http://i.imgur.com/UyjQBkJ.png'
@@ -79,7 +79,7 @@ import ParallaxScrollView from 'react-native-scroll-view';
 
 ### Custom Header view & ScrollView content
 
-```
+```jsx
 <ParallaxScrollView
   windowHeight={SCREEN_HEIGHT}
   backgroundSource='http://i.imgur.com/s4JEY9E.jpg'
