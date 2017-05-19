@@ -1,12 +1,10 @@
 <p align="center">
   <a href="https://github.com/Monte9/react-native-scroll-view">
-    <img alt="react-native-scroll-view" src="http://i.imgur.com/j1ncYnT.jpg" width="450">
+    <img alt="react-native-scroll-view" src="http://i.imgur.com/j1ncYnT.jpg">
   </a>
 </p>
 
-<p align="center">
-  The (Parallax) ScrollView component we all deserve. :rocket:
-</p>
+<br />
 
 <p align="center">
   <a href="https://www.npmjs.com/package/react-native-scroll-view"><img src="https://img.shields.io/npm/v/react-native-scroll-view.svg?style=flat-square"></a>
@@ -15,7 +13,7 @@
 
 ## Demo
 
-![Demo gif](http://i.imgur.com/th5pNlM.gifv)
+![Demo gif](./react-native-scroll-view.gif)
 
 ## Installation
 
