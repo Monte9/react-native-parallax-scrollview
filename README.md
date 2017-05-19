@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="react-native-scroll-view" src="http://i.imgur.com/j1ncYnT.jpg" width="700">
+  <img alt="react-native-scroll-view" src="https://github.com/Monte9/react-native-scroll-view/blob/master/logo.jpg">
 </p>
 
 <br />
