@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <ParallaxScrollView
         windowHeight={SCREEN_HEIGHT}
-        backgroundSource='http://i.imgur.com/s4JEY9E.jpg'
+        backgroundSource={{uri:'http://i.imgur.com/s4JEY9E.jpg'}}
         navBarTitle='Custom Title'
         navBarTitleColor='black'
         navBarColor='white'
@@ -72,7 +72,7 @@ class App extends React.Component {
     return (
       <ParallaxScrollView
         windowHeight={SCREEN_HEIGHT * 0.4}
-        backgroundSource='http://i.imgur.com/ao1nxlD.png'
+        backgroundSource={{uri:'http://i.imgur.com/ao1nxlD.png'}}
         navBarTitle='John Oliver'
         userName='John Oliver'
         userTitle='Comedian'
