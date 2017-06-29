@@ -15,9 +15,13 @@
 
 ## Installation
 
-Install the package using yarn or npm:
+This package has a dependency of React Native Elements. Install RNE first with:
 
-```yarn add react-native-parallax-scrollview``` or  ```npm i react-native-parallax-scrollview```
+```yarn add react-native-elements```
+
+Finally install this package using yarn or npm:
+
+```yarn add react-native-parallax-scrollview```
 
 ## Usage
 
