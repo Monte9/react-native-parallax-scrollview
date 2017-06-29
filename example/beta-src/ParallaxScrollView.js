@@ -52,7 +52,7 @@ export default class ParallaxScrollView extends Component {
             ]
           }
         ]}
-        source={{uri: backgroundSource}}
+        source={backgroundSource}
       >
       </Animated.Image>
     );
@@ -269,7 +269,7 @@ export default class ParallaxScrollView extends Component {
 }
 
 ParallaxScrollView.defaultProps = {
-  backgroundSource: 'http://i.imgur.com/6Iej2c3.png',
+  backgroundSource: {uri: 'http://i.imgur.com/6Iej2c3.png'},
   windowHeight: SCREEN_HEIGHT * DEFAULT_WINDOW_MULTIPLIER,
   leftIconOnPress: () => console.log('Left icon pressed'),
   rightIconOnPress: () => console.log('Right icon pressed')
@@ -277,7 +277,7 @@ ParallaxScrollView.defaultProps = {
 
 ParallaxScrollView.propTypes = {
   ...ScrollViewPropTypes,
-  backgroundSource: React.PropTypes.string,
+  backgroundSource: Image.propTypes.source,
   windowHeight: React.PropTypes.number,
   navBarTitle: React.PropTypes.string,
   navBarTitleColor: React.PropTypes.string,
