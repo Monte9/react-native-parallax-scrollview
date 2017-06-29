@@ -1,5 +1,5 @@
 {
-  "name": "react-native-scroll-view",
+  "name": "react-native-parallax-scrollview",
   "version": "0.1.0",
   "description": "The (Parallax) ScrollView component we all deserve",
   "main": "./src/ParallaxScrollView",
