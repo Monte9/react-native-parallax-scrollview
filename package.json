@@ -1,7 +1,7 @@
 {
   "name": "react-native-parallax-scrollview",
-  "version": "1.0.4",
-  "description": "The (Parallax) ScrollView component we all deserve",
+  "version": "1.0.5",
+  "description": "The Parallax ScrollView component we all deserve",
   "main": "./src/ParallaxScrollView",
   "repository": {
     "type": "git",
@@ -21,10 +21,6 @@
   "scripts": {
     "lint": "eslint src/"
   },
-  "peerDependencies": {
-    "react": "16.0.0-alpha.6",
-    "react-native-elements": "^13.0.0"
-  },
   "author": "Monte Thakkar",
   "license": "MIT",
   "bugs": {
@@ -34,6 +30,6 @@
   "devDependencies": {
     "react": "16.0.0-alpha.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz",
-    "react-native-elements": "^13.0.0"
+    "react-native-elements": "^0.12.2"
   }
 }

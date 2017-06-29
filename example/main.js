@@ -1,6 +1,6 @@
 import Expo from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 
 import ParallaxScrollView from './beta-src/ParallaxScrollView';
 
@@ -8,11 +8,11 @@ export const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class App extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       index: 0
-    }
+    };
   }
 
   customView() {
@@ -56,7 +56,7 @@ class App extends React.Component {
           </View>
         </ScrollView>
       </ParallaxScrollView>
-    )
+    );
   }
 
   defaultView() {
@@ -65,7 +65,7 @@ class App extends React.Component {
         leftIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
         rightIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
       />
-    )
+    );
   }
 
   johnOliverView() {
@@ -86,15 +86,15 @@ class App extends React.Component {
   }
 
   render() {
-    const { index } = this.state
+    const { index } = this.state;
 
     switch(index) {
       case 0:
-      return this.defaultView()
+      return this.defaultView();
       case 1:
-      return this.johnOliverView()
+      return this.johnOliverView();
       case 2:
-      return this.customView()
+      return this.customView();
     }
   }
 }
@@ -115,6 +115,6 @@ const styles = StyleSheet.create ({
     color: 'white',
     fontWeight: '300'
   },
-})
+});
 
 Expo.registerRootComponent(App);
