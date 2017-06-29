@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="react-native-parallax-scroll-view" src="https://github.com/Monte9/react-native-parallax-scrollview/blob/master/logo.jpg" width="1200">
+  <img alt="react-native-parallax-scroll-view" src="http://i.imgur.com/xZQZeL1.jpg" width="1200">
 </p>
 
 <br />
