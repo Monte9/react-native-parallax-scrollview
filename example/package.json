@@ -1,15 +1,16 @@
 {
   "name": "parallax-scrollview-example",
-  "version": "0.0.0",
-  "description": "Hello Expo!",
-  "author": null,
+  "version": "1.0.0",
+  "description": "Example app for Parallax ScrollView in React Native",
+  "author": "Monte Thakkar",
   "private": true,
   "main": "main.js",
   "dependencies": {
     "expo": "16.0.0",
     "react": "16.0.0-alpha.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz",
-    "react-native-elements": "^0.12.2"
+    "react-native-elements": "^0.12.2",
+    "react-native-parallax-scrollview": "^1.0.5"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
