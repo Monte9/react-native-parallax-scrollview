@@ -1,12 +1,12 @@
 <p align="center">
-  <img alt="react-native-scroll-view" src="https://github.com/Monte9/react-native-scroll-view/blob/master/logo.jpg" width="1200">
+  <img alt="react-native-parallax-scroll-view" src="https://github.com/Monte9/react-native-parallax-scrollview/blob/master/logo.jpg" width="1200">
 </p>
 
 <br />
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/react-native-scroll-view"><img src="https://img.shields.io/npm/v/react-native-scroll-view.svg?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/react-native-scroll-view"><img src="https://img.shields.io/npm/dm/react-native-scroll-view.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/react-native-parallax-scrollview"><img src="https://img.shields.io/npm/v/react-native-parallax-scrollview.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/react-native-parallax-scrollview"><img src="https://img.shields.io/npm/dm/react-native-parallax-scrollview.svg?style=flat-square"></a>
 </p>
 
 ## Demo
@@ -17,14 +17,14 @@
 
 Install the package using yarn or npm:
 
-```yarn add react-native-scroll-view``` or  ```npm i react-native-scroll-view```
+```yarn add react-native-parallax-scrollview``` or  ```npm i react-native-parallax-scrollview```
 
 ## Usage
 
 ### Default Profile Component
 
 ``` jsx
-import ParallaxScrollView from 'react-native-scroll-view';
+import ParallaxScrollView from 'react-native-parallax-scrollview';
 
 <ParallaxScrollView />
 ```
@@ -146,7 +146,7 @@ You can try it out with Exponent [here](https://exp.host/@monte9/parallax-scroll
 
 ### Example
 
-Look at the [`example`](https://github.com/Monte9/react-native-scroll-view/tree/master/example) folder to run the expo app locally.
+Look at the [`example`](https://github.com/Monte9/react-native-parallax-scrollview/tree/master/example) folder to run the expo app locally.
 
 ## Motivation
 
