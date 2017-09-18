@@ -62,7 +62,9 @@ class App extends React.Component {
   defaultView() {
     return (
       <ParallaxScrollView
+        leftIcon={{ name: 'rocket', color: 'white', size: 30, type: 'font-awesome' }}
         leftIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
+        rightIcon={{ name: 'user', color: 'white', size: 30, type: 'font-awesome' }}
         rightIconOnPress={() => this.setState({index: (this.state.index + 1 ) % 3})}
       />
     );

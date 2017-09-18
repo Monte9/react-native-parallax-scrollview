@@ -142,6 +142,7 @@ export default class ParallaxScrollView extends Component {
           })
         }}
       >
+      {leftIcon &&
         <View
           style={{
             flex: 1,
@@ -159,6 +160,7 @@ export default class ParallaxScrollView extends Component {
             underlayColor='transparent'
           />
         </View>
+      }
         <View
           style={{
             flex: 5,
@@ -170,6 +172,7 @@ export default class ParallaxScrollView extends Component {
         >
           {this.renderNavBarTitle()}
         </View>
+      {rightIcon &&
         <View
           style={{
             flex: 1,
@@ -187,6 +190,7 @@ export default class ParallaxScrollView extends Component {
             underlayColor='transparent'
           />
         </View>
+      }
       </Animated.View>
     );
   }
