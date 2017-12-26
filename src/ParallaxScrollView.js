@@ -283,7 +283,7 @@ ParallaxScrollView.defaultProps = {
 
 ParallaxScrollView.propTypes = {
   ...ScrollViewPropTypes,
-  backgroundSource: PropTypes.source,
+  backgroundSource: PropTypes.object,
   windowHeight: PropTypes.number,
   navBarTitle: PropTypes.string,
   navBarTitleColor: PropTypes.string,
