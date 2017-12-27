@@ -32,7 +32,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz",
     "react-native-elements": "^0.12.2"
   },
-  "peerDependencies: {
+  "peerDependencies": {
     "prop-types": "^15.6.0"
   }
 }
