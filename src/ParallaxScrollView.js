@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   Text,
   View,
   Image,
   Animated,
-  ScrollView,
-  StyleSheet
+  ScrollView
 } from 'react-native';
 
 import { Icon, List, ListItem } from 'react-native-elements';
 
 import { USER, FACEBOOK_LIST, SLACK_LIST, GENERIC_LIST, SCREEN_WIDTH, SCREEN_HEIGHT, DEFAULT_WINDOW_MULTIPLIER, DEFAULT_NAVBAR_HEIGHT } from './constants';
+
+import styles from './styles';
 
 const ScrollViewPropTypes = ScrollView.propTypes;
 
@@ -59,8 +62,8 @@ export default class ParallaxScrollView extends Component {
   }
 
   renderHeaderView() {
-    var { windowHeight, backgroundSource, userImage, userName, userTitle } = this.props;
-    var { scrollY } = this.state;
+    const { windowHeight, backgroundSource, userImage, userName, userTitle } = this.props;
+    const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
     }
@@ -98,8 +101,8 @@ export default class ParallaxScrollView extends Component {
   }
 
   renderNavBarTitle() {
-    var { windowHeight, backgroundSource, navBarTitleColor } = this.props;
-    var { scrollY } = this.state;
+    const { windowHeight, backgroundSource, navBarTitleColor, navBarTitleComponent } = this.props;
+    const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
     }
@@ -113,19 +116,20 @@ export default class ParallaxScrollView extends Component {
           })
         }}
       >
+        {navBarTitleComponent ||
         <Text style={{ fontSize: 18, fontWeight: '600', color: navBarTitleColor || 'white' }}>
           {this.props.navBarTitle || USER.name}
-        </Text>
+        </Text>}
       </Animated.View>
     );
   }
 
   rendernavBar() {
-    var {
+    const {
       windowHeight, backgroundSource, leftIcon,
       rightIcon, leftIconOnPress, rightIconOnPress, navBarColor
     } = this.props;
-    var { scrollY } = this.state;
+    const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
     }
@@ -245,7 +249,7 @@ export default class ParallaxScrollView extends Component {
   }
 
   render() {
-    var { style, ...props } = this.props;
+    const { style, ...props } = this.props;
 
     return (
       <View style={[styles.container, style]}>
@@ -281,55 +285,16 @@ ParallaxScrollView.defaultProps = {
 
 ParallaxScrollView.propTypes = {
   ...ScrollViewPropTypes,
-  backgroundSource: Image.propTypes.source,
-  windowHeight: React.PropTypes.number,
-  navBarTitle: React.PropTypes.string,
-  navBarTitleColor: React.PropTypes.string,
-  navBarColor: React.PropTypes.string,
-  userImage: React.PropTypes.string,
-  userName: React.PropTypes.string,
-  userTitle: React.PropTypes.string,
-  headerView: React.PropTypes.node,
-  leftIcon: React.PropTypes.object,
-  rightIcon: React.PropTypes.object
+  backgroundSource: PropTypes.object,
+  windowHeight: PropTypes.number,
+  navBarTitle: PropTypes.string,
+  navBarTitleColor: PropTypes.string,
+  navBarTitleComponent: PropTypes.node,
+  navBarColor: PropTypes.string,
+  userImage: PropTypes.string,
+  userName: PropTypes.string,
+  userTitle: PropTypes.string,
+  headerView: PropTypes.node,
+  leftIcon: PropTypes.object,
+  rightIcon: PropTypes.object
 };
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    borderColor: 'transparent'
-  },
-  scrollView: {
-    backgroundColor: 'transparent'
-  },
-  background: {
-    position: 'absolute',
-    backgroundColor: '#2e2f31',
-    width: SCREEN_WIDTH,
-    resizeMode: 'cover'
-  },
-  content: {
-    shadowColor: '#222',
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    backgroundColor: '#fff',
-    flex: 1,
-    flexDirection: 'column'
-  },
-  headerView: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  avatarView: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  listView: {
-    backgroundColor: 'rgba(247,247, 250, 1)'
-  },
-  logoutText: {
-    color: 'red',
-    textAlign: 'center',
-    fontWeight: 'bold'
-  }
-});
