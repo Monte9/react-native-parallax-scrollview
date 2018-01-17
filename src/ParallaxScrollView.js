@@ -153,7 +153,6 @@ export default class ParallaxScrollView extends Component {
         <View
           style={{
             flex: 1,
-            marginTop: 20,
             justifyContent: 'center',
             alignItems: 'center'
           }}
@@ -171,7 +170,6 @@ export default class ParallaxScrollView extends Component {
         <View
           style={{
             flex: 5,
-            marginTop: 20,
             justifyContent: 'center',
             alignItems: 'center',
             alignSelf: 'center'
@@ -183,7 +181,6 @@ export default class ParallaxScrollView extends Component {
         <View
           style={{
             flex: 1,
-            marginTop: 20,
             justifyContent: 'center',
             alignItems: 'center'
           }}
