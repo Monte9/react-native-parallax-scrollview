@@ -141,8 +141,10 @@ import ParallaxScrollView from 'react-native-parallax-scrollview';
 | headerView | Profile View | custom object | Pass in a custom object to override the default header view |
 | leftIcon | none | object | Pass in the left icon name and type as an object. ```leftIcon={{name: 'rocket', color: 'red', size: 30, type: 'font-awesome'}}```|
 | leftIconOnPress | none | callback | Callback function when the left icon is pressed |
+| leftIconUnderlayColor | 'transparent' | string | Underlay color for the left icon. |
 | rightIcon | none | object | Pass in the right icon name and type etc as an object. ```rightIcon={{name: 'user', color: 'blue', size: 30, type: 'font-awesome'}}```|
 | rightIconOnPress | none | callback | Callback function when the right icon is pressed |
+| rightIconUnderlayColor | 'transparent' | string | Underlay color for the right icon. |
 | *children* | List View | React Components | Render any react views/components as children and these will be rendered below the headerView |
 
 ## Try it out

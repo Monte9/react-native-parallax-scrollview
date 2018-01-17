@@ -128,7 +128,7 @@ export default class ParallaxScrollView extends Component {
   rendernavBar() {
     const {
       windowHeight, backgroundSource, leftIcon,
-      rightIcon, leftIconOnPress, rightIconOnPress, navBarColor, navBarHeight
+      rightIcon, leftIconOnPress, rightIconOnPress, navBarColor, navBarHeight, leftIconUnderlayColor, rightIconUnderlayColor
     } = this.props;
     const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
@@ -163,7 +163,7 @@ export default class ParallaxScrollView extends Component {
             color={leftIcon && leftIcon.color || 'white'}
             size={leftIcon && leftIcon.size || 23}
             onPress={leftIconOnPress}
-            underlayColor='transparent'
+            underlayColor={leftIconUnderlayColor || 'transparent'}
           />
         </View>
       }
@@ -191,7 +191,7 @@ export default class ParallaxScrollView extends Component {
             color={rightIcon && rightIcon.color || 'white'}
             size={rightIcon && rightIcon.size || 23}
             onPress={rightIconOnPress}
-            underlayColor='transparent'
+            underlayColor={rightIconUnderlayColor || 'transparent'}
           />
         </View>
       }
