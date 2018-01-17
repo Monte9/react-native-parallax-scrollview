@@ -113,7 +113,8 @@ export default class ParallaxScrollView extends Component {
         style={{
           opacity: scrollY.interpolate({
             inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
-            outputRange: [0, 0, 1]
+            outputRange: [0, 0, 1],
+            extrapolate: 'clamp'
           })
         }}
       >
