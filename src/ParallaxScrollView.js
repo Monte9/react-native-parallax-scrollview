@@ -27,9 +27,8 @@ export default class ParallaxScrollView extends Component {
   }
 
   scrollTo(where) {
-    const { scroll } = this.refs;
-    if (!scroll) return;
-    scroll.scrollTo(where);
+    if (!this._scrollView) return;
+    this._scrollView.scrollTo(where);
   }
   
   renderBackground() {
@@ -283,7 +282,7 @@ export default class ParallaxScrollView extends Component {
       <View style={[styles.container, style]}>
         {this.renderBackground()}
         {this.rendernavBar()}
-        <ScrollView ref='scroll'
+        <ScrollView
           ref={component => {
             this._scrollView = component;
           }}
