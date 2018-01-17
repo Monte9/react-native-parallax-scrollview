@@ -149,51 +149,55 @@ export default class ParallaxScrollView extends Component {
           })
         }}
       >
-      {leftIcon &&
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <Icon
-            name={leftIcon && leftIcon.name || 'menu'}
-            type={leftIcon && leftIcon.type || 'simple-line-icon'}
-            color={leftIcon && leftIcon.color || 'white'}
-            size={leftIcon && leftIcon.size || 23}
-            onPress={leftIconOnPress}
-            underlayColor={leftIconUnderlayColor || 'transparent'}
-          />
-        </View>
-      }
-        <View
-          style={{
-            flex: 5,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'center'
-          }}
-        >
-          {this.renderNavBarTitle()}
-        </View>
-      {rightIcon &&         
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <Icon
-            name={rightIcon && rightIcon.name || 'present'}
-            type={rightIcon && rightIcon.type || 'simple-line-icon'}
-            color={rightIcon && rightIcon.color || 'white'}
-            size={rightIcon && rightIcon.size || 23}
-            onPress={rightIconOnPress}
-            underlayColor={rightIconUnderlayColor || 'transparent'}
-          />
-        </View>
+      {this.props.navBarView ||
+          (
+          {leftIcon &&
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Icon
+                name={leftIcon && leftIcon.name || 'menu'}
+                type={leftIcon && leftIcon.type || 'simple-line-icon'}
+                color={leftIcon && leftIcon.color || 'white'}
+                size={leftIcon && leftIcon.size || 23}
+                onPress={leftIconOnPress}
+                underlayColor={leftIconUnderlayColor || 'transparent'}
+              />
+            </View>
+          }
+            <View
+              style={{
+                flex: 5,
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignSelf: 'center'
+              }}
+            >
+              {this.renderNavBarTitle()}
+            </View>
+          {rightIcon &&         
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Icon
+                name={rightIcon && rightIcon.name || 'present'}
+                type={rightIcon && rightIcon.type || 'simple-line-icon'}
+                color={rightIcon && rightIcon.color || 'white'}
+                size={rightIcon && rightIcon.size || 23}
+                onPress={rightIconOnPress}
+                underlayColor={rightIconUnderlayColor || 'transparent'}
+              />
+            </View>
+          }
+          )
       }
       </Animated.View>
     );
