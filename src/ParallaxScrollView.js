@@ -136,21 +136,39 @@ export default class ParallaxScrollView extends Component {
     }
 
     const newNavBarHeight = navBarHeight || DEFAULT_NAVBAR_HEIGHT;
-    
-    return (
-      <Animated.View
-        style={{
-          height: newNavBarHeight,
-          width: SCREEN_WIDTH,
-          flexDirection: 'row',
-          backgroundColor: scrollY.interpolate({
-            inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
-            outputRange: ['transparent', 'transparent', navBarColor || 'rgba(0, 0, 0, 1.0)']
-          })
-        }}
-      >
-      {this.props.navBarView ||
-          (
+
+    if(this.props.navBarView)
+    {
+        return (
+          <Animated.View
+            style={{
+              height: newNavBarHeight,
+              width: SCREEN_WIDTH,
+              flexDirection: 'row',
+              backgroundColor: scrollY.interpolate({
+                inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
+                outputRange: ['transparent', 'transparent', navBarColor || 'rgba(0, 0, 0, 1.0)']
+              })
+            }}
+          >
+          {this.props.navBarView}
+          </Animated.View>
+        );                
+    }
+    else
+    {
+        return (
+          <Animated.View
+            style={{
+              height: newNavBarHeight,
+              width: SCREEN_WIDTH,
+              flexDirection: 'row',
+              backgroundColor: scrollY.interpolate({
+                inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
+                outputRange: ['transparent', 'transparent', navBarColor || 'rgba(0, 0, 0, 1.0)']
+              })
+            }}
+          >
           {leftIcon &&
             <View
               style={{
@@ -197,10 +215,9 @@ export default class ParallaxScrollView extends Component {
               />
             </View>
           }
-          )
-      }
-      </Animated.View>
-    );
+          </Animated.View>
+        );        
+    }
   }
 
   renderTodoListContent() {
