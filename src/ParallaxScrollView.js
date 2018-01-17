@@ -62,19 +62,20 @@ export default class ParallaxScrollView extends Component {
   }
 
   renderHeaderView() {
-    const { windowHeight, backgroundSource, userImage, userName, userTitle } = this.props;
+    const { windowHeight, backgroundSource, userImage, userName, userTitle, navBarHeight } = this.props;
     const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
     }
 
-    const newWindowHeight = windowHeight - DEFAULT_NAVBAR_HEIGHT;
+    const newNavBarHeight = navBarHeight || DEFAULT_NAVBAR_HEIGHT;    
+    const newWindowHeight = windowHeight - newNavBarHeight;
 
     return (
       <Animated.View
         style={{
           opacity: scrollY.interpolate({
-            inputRange: [-windowHeight, 0, windowHeight * DEFAULT_WINDOW_MULTIPLIER + DEFAULT_NAVBAR_HEIGHT],
+            inputRange: [-windowHeight, 0, windowHeight * DEFAULT_WINDOW_MULTIPLIER + newNavBarHeight],
             outputRange: [1, 1, 0]
           })
         }}
@@ -127,17 +128,19 @@ export default class ParallaxScrollView extends Component {
   rendernavBar() {
     const {
       windowHeight, backgroundSource, leftIcon,
-      rightIcon, leftIconOnPress, rightIconOnPress, navBarColor
+      rightIcon, leftIconOnPress, rightIconOnPress, navBarColor, navBarHeight
     } = this.props;
     const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
     }
 
+    const newNavBarHeight = navBarHeight || DEFAULT_NAVBAR_HEIGHT;
+    
     return (
       <Animated.View
         style={{
-          height: DEFAULT_NAVBAR_HEIGHT,
+          height: newNavBarHeight,
           width: SCREEN_WIDTH,
           flexDirection: 'row',
           backgroundColor: scrollY.interpolate({

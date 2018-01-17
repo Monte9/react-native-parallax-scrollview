@@ -134,6 +134,7 @@ import ParallaxScrollView from 'react-native-parallax-scrollview';
 | navBarTitle | Katy Friedson | string | The title to be display on the NavBar header |
 | navBarTitleColor | 'white' | string | Color of the navBar title when displayed |
 | navBarColor | 'rgba(0, 0, 0, 1.0)' | string | Color of the navbar when shown |
+| navBarHeight | 65 | number | Height of the navBar when displayed |
 | userName | Katy Friedson | string | The user name displayed in the collapsable header view |
 | userImage | http://i.imgur.com/uma9OfG.jpg | string | The user image displayed in the collapsable header view |
 | userTitle | Engineering Manager | string | The user title displayed in the collapsable header view |
