@@ -32,7 +32,7 @@ export default class ParallaxScrollView extends Component {
   }
   
   renderBackground() {
-    var { windowHeight, backgroundSource } = this.props;
+    var { windowHeight, backgroundSource, onBackgroundLoadEnd, onBackgroundLoadError } = this.props;
     var { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
@@ -61,6 +61,8 @@ export default class ParallaxScrollView extends Component {
           }
         ]}
         source={backgroundSource}
+        onLoadEnd={onBackgroundLoadEnd}
+        onError={onBackgroundLoadError}
       >
       </Animated.Image>
     );

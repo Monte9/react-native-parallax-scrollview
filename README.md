@@ -130,6 +130,8 @@ import ParallaxScrollView from 'react-native-parallax-scrollview';
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
 | backgroundSource | {uri:http://i.imgur.com/6Iej2c3.png} | ImageSourcePropType | The background image for the header. The image source is (either a remote URL or a local file resource) ```backgroundSource={{uri:http://i.imgur.com/6Iej2c3.png}}``` or ```backgroundSource={require('./image.png')}```  |
+| onBackgroundLoadEnd | none | callback | Callback function when the background finishes loading (either with success or failure) |
+| onBackgroundLoadError | none | callback | Callback function when the background loading fails (an object is received with the error details) |
 | windowHeight | SCREEN_HEIGHT * 0.5 | number | The height of the header window |
 | navBarTitle | Katy Friedson | string | The title to be display on the NavBar header |
 | navBarTitleColor | 'white' | string | Color of the navBar title when displayed |
