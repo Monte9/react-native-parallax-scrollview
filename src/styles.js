@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     background: {
       position: 'absolute',
-      backgroundColor: '#2e2f31',
+      backgroundColor: 'white',
       width: SCREEN_WIDTH,
       resizeMode: 'cover'
     },
