@@ -153,19 +153,29 @@ export default class ParallaxScrollView extends Component {
         }
 
         return (
-            <Animated.View
+            <View
                 style={{
                     height: DEFAULT_NAVBAR_HEIGHT,
                     width: SCREEN_WIDTH,
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    backgroundColor: navBarColor || 'rgba(0, 0, 0, 1.0)',
-                    opacity: scrollY.interpolate({
-                        inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
-                        outputRange: [0, 0, 1]
-                    })
                 }}
             >
+
+                <Animated.View
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: navBarColor || 'rgba(0, 0, 0, 1.0)',
+                        opacity: scrollY.interpolate({
+                            inputRange: [-windowHeight, windowHeight * DEFAULT_WINDOW_MULTIPLIER, windowHeight * 0.8],
+                            outputRange: [0, 0, 1]
+                        })
+                    }}
+                />
 
                 <View
                     style={{
@@ -226,7 +236,7 @@ export default class ParallaxScrollView extends Component {
 
                     ))}
                 </View>
-            </Animated.View>
+            </View>
         );
     }
 
