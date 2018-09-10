@@ -1,4 +1,3 @@
-import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 
@@ -6,7 +5,7 @@ import ParallaxScrollView from './beta-src/ParallaxScrollView';
 
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor() {
     super();
 
@@ -118,5 +117,3 @@ const styles = StyleSheet.create ({
     fontWeight: '300'
   },
 });
-
-Expo.registerRootComponent(App);

@@ -17,7 +17,7 @@
 
 This package has a dependency of React Native Elements. Install RNE first with:
 
-```yarn add react-native-elements```
+```yarn add react-native-elements``` (make sure the version is `0.19.0`)
 
 Finally install this package using yarn or npm:
 
