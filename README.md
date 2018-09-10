@@ -130,18 +130,24 @@ import ParallaxScrollView from 'react-native-parallax-scrollview';
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
 | backgroundSource | {uri:http://i.imgur.com/6Iej2c3.png} | ImageSourcePropType | The background image for the header. The image source is (either a remote URL or a local file resource) ```backgroundSource={{uri:http://i.imgur.com/6Iej2c3.png}}``` or ```backgroundSource={require('./image.png')}```  |
+| onBackgroundLoadEnd | none | callback | Callback function when the background finishes loading (either with success or failure) |
+| onBackgroundLoadError | none | callback | Callback function when the background loading fails (an object is received with the error details) |
 | windowHeight | SCREEN_HEIGHT * 0.5 | number | The height of the header window |
 | navBarTitle | Katy Friedson | string | The title to be display on the NavBar header |
 | navBarTitleColor | 'white' | string | Color of the navBar title when displayed |
 | navBarColor | 'rgba(0, 0, 0, 1.0)' | string | Color of the navbar when shown |
+| navBarHeight | 65 | number | Height of the navBar when displayed |
+| navBarView | Left/Right Icons View | custom object | Pass in a custom object to override the default navigation bar view |
 | userName | Katy Friedson | string | The user name displayed in the collapsable header view |
 | userImage | http://i.imgur.com/uma9OfG.jpg | string | The user image displayed in the collapsable header view |
 | userTitle | Engineering Manager | string | The user title displayed in the collapsable header view |
 | headerView | Profile View | custom object | Pass in a custom object to override the default header view |
 | leftIcon | none | object | Pass in the left icon name and type as an object. ```leftIcon={{name: 'rocket', color: 'red', size: 30, type: 'font-awesome'}}```|
 | leftIconOnPress | none | callback | Callback function when the left icon is pressed |
+| leftIconUnderlayColor | 'transparent' | string | Underlay color for the left icon. |
 | rightIcon | none | object | Pass in the right icon name and type etc as an object. ```rightIcon={{name: 'user', color: 'blue', size: 30, type: 'font-awesome'}}```|
 | rightIconOnPress | none | callback | Callback function when the right icon is pressed |
+| rightIconUnderlayColor | 'transparent' | string | Underlay color for the right icon. |
 | *children* | List View | React Components | Render any react views/components as children and these will be rendered below the headerView |
 
 ## Try it out
