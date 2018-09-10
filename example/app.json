@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "rn-parallax-scrollview-example",
+    "name": "parallax-scrollview-example",
     "description": "This project is really great.",
-    "slug": "rn-parallax-scrollview-example",
+    "slug": "parallax-scrollview-example",
     "privacy": "public",
     "sdkVersion": "29.0.0",
     "platforms": ["ios", "android"],
