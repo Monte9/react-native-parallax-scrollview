@@ -94,7 +94,11 @@ export default class ParallaxScrollView extends Component {
                 <View
                   style={styles.avatarView}
                 >
-                  <Image source={{uri: userImage || USER.image}} style={{height: 120, width: 120, borderRadius: 60}} />
+                {(typeof userImage === "string" || userImage instanceof String) ?
+                <Image source={{uri:userImage || USER.image}} style={{height: 120, width: 120, borderRadius: 60}} />
+                :
+                  <Image source={userImage || USER.image} style={{height: 120, width: 120, borderRadius: 60}} />
+                }
                 </View>
                 <View style={{paddingVertical: 10}}>
                   <Text style={{textAlign: 'center', fontSize: 22, color: 'white', paddingBottom: 5}}>{userName || USER.name}</Text>
