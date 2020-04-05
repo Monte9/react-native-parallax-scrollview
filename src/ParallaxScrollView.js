@@ -297,7 +297,9 @@ export default class ParallaxScrollView extends Component {
           style={styles.scrollView}
           onScroll={Animated.event([
             { nativeEvent: { contentOffset: { y: this.state.scrollY } } }
-          ])}
+          ], {
+            listener: this.props.onScroll
+          } )}
           scrollEventThrottle={16}
         >
           {this.renderHeaderView()}
