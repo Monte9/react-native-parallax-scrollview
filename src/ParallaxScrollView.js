@@ -319,7 +319,13 @@ ParallaxScrollView.defaultProps = {
 
 ParallaxScrollView.propTypes = {
   ...ScrollViewPropTypes,
-  backgroundSource: PropTypes.object,
+  backgroundSource: PropTypes.oneOfType([
+    PropTypes.shape({
+      uri: PropTypes.string,
+    }),
+    // Opaque type returned by require('./image.jpg')
+    PropTypes.number,
+  ]),
   windowHeight: PropTypes.number,
   navBarTitle: PropTypes.string,
   navBarTitleColor: PropTypes.string,
